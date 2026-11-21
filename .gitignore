@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env*
+assets/css/fonts-local.css
+assets/fonts/*.ttf
+assets/fonts/*.otf
+assets/fonts/*.woff
+assets/fonts/*.woff2
