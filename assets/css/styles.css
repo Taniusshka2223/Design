@@ -200,3 +200,122 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 @media(prefers-reduced-motion:reduce){.plan-hero::after{animation:none}.custom-cursor{display:none!important}}
 
 @media(max-width:870px){.custom-cursor{display:none!important}body.has-custom-cursor,body.has-custom-cursor *{cursor:auto!important}}
+/* Typography refresh: clear desktop reading + readable mobile labels (Nov 2026). */
+:root{--muted:#bac8df;--subtle:#a8b8d2}
+body{font-size:18px;line-height:1.52}
+.brand{font-size:19px}
+.nav-item,.nav-label{font-size:18px}
+.help-card strong{font-size:20px}.help-card small{font-size:16px}
+.details-link,.lang-option{font-size:16px}.language-label,.sidebar-hint{font-size:14px}
+.eyebrow{font-size:17px}.page-title{font-size:40px}
+.tiny-action{font-size:16px}.tab{font-size:17px}
+.content-desc{font-size:19px;line-height:1.58}
+.metric-card{min-height:155px;padding:24px;gap:12px}
+.metric-label{font-size:17px;line-height:1.35}.metric-value{font-size:38px}
+.metric-card .metric-value.smaller{font-size:33px}.metric-sub{font-size:16px}
+.panel-title{font-size:25px}.panel-title-sm{font-size:22px}.panel-sub{font-size:17px;line-height:1.5}
+.chart-total,.chart-group-label,.legend-item{font-size:16px}
+.chart-boundary span,.chart-feedback,.bar-top-value{font-size:15px}
+.chart-group-label{line-height:1.28;overflow-wrap:break-word}
+.growth-item-head{font-size:19px}.growth-stat{font-size:24px}.growth-badge{font-size:15px}.growth-note{font-size:16px}
+.mini-label,.mini-foot{font-size:16px;line-height:1.5}.mini-value{font-size:33px}
+.info-item{font-size:17px;line-height:1.55}
+.horizontal-row .name{font-size:17px}.horizontal-row .name small{font-size:15px}.horizontal-row .measure{font-size:16px}
+.fine-note{font-size:16px;line-height:1.55}.highlight-note{font-size:17px}
+.campaign-card h3{font-size:20px}.campaign-card p{font-size:17px;line-height:1.5}
+.feature .feature-kicker{font-size:17px}.feature .feature-caption{font-size:17px}
+.info-banner{font-size:17px;line-height:1.52}.info-banner.strong{font-size:20px}
+.tag,.status-tag{font-size:15px}
+.problem-title h2{font-size:23px}.problem-detail p{font-size:18px;line-height:1.55}
+.solution-card h3{font-size:20px}.solution-card p{font-size:17px;line-height:1.52}
+.plan-card h2{font-size:21px}.plan-card p,.process-list li{font-size:17px;line-height:1.52}.plan-current{font-size:16px}
+.mission-card h2{font-size:27px}
+.plan-eyebrow,.plan-hero>p{font-size:17px}.plan-hero-caption{font-size:23px}.plan-hero-caption strong{font-size:29px}
+.plan-summary h2{font-size:22px}.plan-summary p{font-size:18px}
+.roadmap-head h2{font-size:23px}.roadmap-head span,.quarter{font-size:16px}
+.roadmap-step h3{font-size:23px}.roadmap-step p{font-size:18px;line-height:1.52}
+.plan-process small{font-size:16px}.plan-process strong{font-size:20px}.plan-process span{font-size:18px}
+.filter>span{font-size:16px}.filter select{font-size:17px;min-height:48px}.filter-reset{font-size:16px;min-height:48px}
+@media(max-width:1400px){
+ .plan-hero-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .plan-hero{grid-column:1 / -1}
+ .metrics-grid{gap:16px}
+ .metric-card{padding:20px}
+}
+@media(max-width:1190px){
+ .metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page-title{font-size:36px}
+ .metric-value{font-size:36px}
+ .metric-card .metric-value.smaller{font-size:31px}
+}
+@media(max-width:870px){
+ body{font-size:17px;line-height:1.5}
+ .brand{font-size:18px}.nav-item,.nav-label{font-size:18px}
+ .details-link{font-size:17px}.language-label{font-size:15px}
+ .lang-option{font-size:16px}.lang-compact .lang-option{font-size:14px}
+ .mobile-topbar strong{font-size:15px}.mobile-page{font-size:14px}
+ .eyebrow{font-size:15px}.page-title{font-size:33px}
+ .tab{font-size:16px;min-height:46px}
+ .content-desc{font-size:17px;line-height:1.56}
+ .metric-label{font-size:16px}.metric-value{font-size:35px}
+ .metric-card .metric-value.smaller{font-size:30px}.metric-sub{font-size:15px}
+ .panel-title{font-size:23px}.panel-title-sm{font-size:21px}.panel-sub{font-size:16px}
+ .chart-total,.chart-group-label,.legend-item{font-size:15px}
+ .chart-boundary span,.chart-feedback,.bar-top-value{font-size:14px}
+ .mini-label,.mini-foot{font-size:15px}.info-item{font-size:16px}
+ .horizontal-row .name{font-size:16px}.horizontal-row .name small{font-size:14px}.horizontal-row .measure{font-size:16px}
+ .campaign-card p,.problem-detail p,.solution-card p,.plan-card p{font-size:16px}
+ .plan-summary p,.roadmap-step p,.plan-process span{font-size:17px}
+ .roadmap-step h3{font-size:22px}
+ .filter select{font-size:16px}.filter>span{font-size:15px}.filter-reset{font-size:15px}
+}
+@media(max-width:580px){
+ body{font-size:16px;line-height:1.55}
+ .mobile-topbar strong{font-size:15px}
+ .brand{font-size:18px}.nav-item,.nav-label{font-size:18px}
+ .help-card strong{font-size:19px}.help-card small{font-size:15px}
+ .details-link{font-size:16px}.sidebar-hint{font-size:14px}
+ .lang-compact .lang-option{font-size:14px}
+ .eyebrow{font-size:15px}.page-title{font-size:30px}
+ .tabs{gap:8px}.tab{font-size:15px;padding:0 15px;min-height:44px}
+ .content-desc{font-size:17px;line-height:1.58}
+ .metrics-grid{gap:12px}
+ .metric-card{min-height:142px;padding:17px;gap:8px}
+ .metric-label{font-size:15px;line-height:1.4}
+ .metric-value,.metric-card .metric-value.smaller{font-size:30px}
+ .metric-sub{font-size:14px;line-height:1.45}
+ .panel-title{font-size:22px}.panel-title-sm{font-size:20px}.panel-sub{font-size:16px}
+ .chart-panel,.chart-panel.tall,.growth-panel{min-height:400px}
+ .chart-visual{height:272px}.chart-visual.compact{height:255px}
+ .chart-bars{bottom:48px}.chart-lines{bottom:48px}
+ .chart-total{font-size:14px}.chart-group-label{font-size:14px;line-height:1.3}
+ .chart-boundary span{font-size:13px}.legend-item,.chart-feedback,.bar-top-value{font-size:14px}
+ .growth-item-head{font-size:17px}.growth-stat{font-size:22px}.growth-badge{font-size:14px}.growth-note{font-size:16px}
+ .mini-label,.mini-foot{font-size:14px}.mini-value,.feature .mini-value{font-size:30px}
+ .info-item{font-size:16px;line-height:1.55}
+ .horizontal-row{grid-template-columns:minmax(90px,.65fr) minmax(0,1fr) auto;gap:8px}
+ .horizontal-row .name,.horizontal-row .measure{font-size:15px}
+ .horizontal-row .name small{font-size:14px}
+ .fine-note{font-size:15px}.highlight-note{font-size:16px}
+ .campaign-card h3{font-size:19px}.campaign-card p{font-size:16px}
+ .feature .feature-kicker,.feature .feature-caption{font-size:16px}
+ .info-banner{font-size:16px}.info-banner.strong{font-size:18px}
+ .tag,.status-tag{font-size:14px}
+ .problem-title h2{font-size:21px}.problem-detail p{font-size:16px}
+ .solution-card h3{font-size:19px}.solution-card p{font-size:16px}
+ .plan-card h2{font-size:20px}.plan-card p,.process-list li{font-size:16px}.plan-current{font-size:15px}
+ .mission-card h2{font-size:23px}
+ .plan-hero-caption{font-size:18px}.plan-hero-caption strong{font-size:23px}
+ .plan-hero>p,.plan-eyebrow{font-size:16px}
+ .plan-summary h2{font-size:20px}.plan-summary p{font-size:16px}
+ .roadmap-head h2{font-size:21px}.roadmap-head span,.quarter{font-size:15px}
+ .roadmap-step h3{font-size:20px}.roadmap-step p{font-size:16px}
+ .plan-process small{font-size:15px}.plan-process strong{font-size:17px}.plan-process span{font-size:16px}
+ .filter select{font-size:16px}.filter>span{font-size:15px}.filter-reset{font-size:15px}
+}
+@media(max-width:440px){
+ /* Full-width KPI cards leave room for larger values and labels. */
+ .metrics-grid{grid-template-columns:1fr}
+ .metric-card{min-height:112px;padding:18px 22px}
+ .metric-value,.metric-card .metric-value.smaller{font-size:34px}
+}
