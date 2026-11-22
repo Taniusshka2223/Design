@@ -700,7 +700,7 @@ function shell(){
  app.addEventListener('pointerover',handleBarHover);
  app.addEventListener('pointerout',handleBarLeave);
  app.addEventListener('focusin',handleBarHover);
- window.addEventListener('hashchange',renderRoute);
+ window.addEventListener('hashchange',handleHashChange);
  window.addEventListener('keydown',e=>{
    if(e.key==='Escape'){toggleMenu(false);if(document.fullscreenElement)document.exitFullscreen?.()}
    if(e.key==='ArrowRight'&&e.altKey){e.preventDefault();changeTab(1)}
@@ -716,7 +716,28 @@ function shell(){
 }
 function getRoute(){const r=decodeURIComponent(location.hash.replace(/^#\/?/,'')).replace(/^(?:en|ru)\//,'');return VALID.has(r)?r:'work/all'}
 function getLanguage(){return /^#\/en\//.test(location.hash)?'en':'ru'}
-function switchLanguage(lang){if(lang!==currentLang){location.hash=urlFor(getRoute(),lang)}else{const main=document.querySelector('#main');main?.classList.add('language-pulse');setTimeout(()=>main?.classList.remove('language-pulse'),380)}}
+// Keep mobile menu and dashboard in sync: render immediately, without waiting for hashchange.
+let skipLanguageHash='';
+function handleHashChange(){
+ if(skipLanguageHash===location.hash){skipLanguageHash='';return;}
+ skipLanguageHash='';renderRoute();
+}
+function switchLanguage(lang){
+ if(lang!=='ru'&&lang!=='en')return;
+ const wasOpen=!!document.querySelector('#sidebar')?.classList.contains('menu-open');
+ if(lang!==currentLang){
+  const next=urlFor(getRoute(),lang);
+  skipLanguageHash=next;
+  location.hash=next;
+  renderRoute();
+  if(wasOpen){toggleMenu(false);document.querySelector('#main')?.focus({preventScroll:true});}
+ }else{
+  if(wasOpen)toggleMenu(false);
+  const main=document.querySelector('#main');
+  main?.classList.add('language-pulse');
+  setTimeout(()=>main?.classList.remove('language-pulse'),380);
+ }
+}
 function toggleMenu(force){const side=document.querySelector('#sidebar');const overlay=document.querySelector('#menu-overlay');const button=document.querySelector('#menu-button');if(!side||!overlay||!button)return;const open=typeof force==='boolean'?force:!side.classList.contains('menu-open');side.classList.toggle('menu-open',open);overlay.classList.toggle('show',open);button.setAttribute('aria-expanded',String(open));button.innerHTML=icon(open?'close':'menu',21);document.body.style.overflow=open?'hidden':'';}
 function changeTab(step){const [group,id]=currentRoute.split('/');const set=group==='work'?workTabs:group==='achievements'?winTabs:group==='details'?detailTabs:null;if(!set)return;let idx=set.findIndex(row=>row[0]===id);idx=(idx+step+set.length)%set.length;location.hash=urlFor(group+'/'+set[idx][0]);}
 function handleClick(e){
